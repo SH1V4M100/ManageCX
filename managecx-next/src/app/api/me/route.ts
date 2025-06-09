@@ -4,7 +4,6 @@ import { getServerSession } from 'next-auth/next';
 import { options } from '../auth/[...nextauth]/options';
 
 export async function GET(req: NextRequest) {
-  console.log('GET request received');
   const session = await getServerSession( options );
 
   if (!session || !session.user) {

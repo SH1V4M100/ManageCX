@@ -27,7 +27,7 @@ export async function GET(req: NextRequest) {
         end_date,
       },
     });
-
+    console.log(response.data)
     return NextResponse.json(response.data);
   } catch (error: any) {
     console.error(error.response?.data || error.message);

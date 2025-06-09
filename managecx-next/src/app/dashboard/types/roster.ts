@@ -1,5 +1,4 @@
 export interface RosterEntry {
-  id: string;
   empId: string;
   empName: string;
   date: string;

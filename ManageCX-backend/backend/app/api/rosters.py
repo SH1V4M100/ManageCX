@@ -144,17 +144,18 @@ def get_subtree_rosters(
 
     query = f"""
     WITH RECURSIVE subordinates AS (
-        SELECT employee_number, full_name, email_work
-        FROM employees
-        WHERE supervisor_id = %s OR manager_id = %s
+    SELECT employee_number, full_name, email_work
+    FROM employees
+    WHERE supervisor_id = %s OR manager_id = %s
 
-        UNION ALL
+    UNION
 
-        SELECT e.employee_number, e.full_name, e.email_work
-        FROM employees e
-        INNER JOIN subordinates s
-            ON e.supervisor_id = s.employee_number OR e.manager_id = s.employee_number
-    )
+    SELECT DISTINCT e.employee_number, e.full_name, e.email_work
+    FROM employees e
+    INNER JOIN subordinates s
+        ON e.supervisor_id = s.employee_number OR e.manager_id = s.employee_number
+)
+
     SELECT 
         s.employee_number, s.full_name, s.email_work,
         r.date, r.login_time, r.logout_time, r.status
@@ -190,7 +191,7 @@ def get_subtree_rosters(
 
     cur.close()
     conn.close()
-
+    print(roster_map.values())
     return list(roster_map.values())
 
 # GET /api/rosters/subtree
