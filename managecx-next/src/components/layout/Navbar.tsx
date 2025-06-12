@@ -29,23 +29,23 @@ const Navbar: React.FC = () => {
   const isAuthenticated = !!session;
 
   return (
-  <header className="bg-black border-b border-gray-800 shadow-sm z-30">
+  <header className="bg-[#003D5B] border-b border-[#002A40] shadow-sm z-30">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex items-center justify-between h-20">
         {/* Left - Logo and Nav */}
         <div className="flex items-center gap-6 flex-grow">
-          <h1 className="text-2xl font-bold text-white">ManageCX</h1>
+          <h1 className="text-2xl font-bold text-white">RosterManager</h1>
 
           <nav className="hidden md:flex items-center gap-6 ml-6">
             <a
               href="/dashboard"
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              className="text-sm font-medium text-white hover:text-[#25E2CC] transition-colors"
             >
               Dashboard
             </a>
             <a
               href="/admin"
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              className="text-sm font-medium text-white hover:text-[#25E2CC] transition-colors"
             >
               Admin
             </a>
@@ -59,14 +59,14 @@ const Navbar: React.FC = () => {
               className="flex items-center gap-3 cursor-pointer select-none"
               onClick={toggleDropdown}
             >
-              <div className="w-9 h-9 bg-primary-600 rounded-full flex items-center justify-center text-white shadow-sm">
+              <div className="w-9 h-9 bg-[#25E2CC] rounded-full flex items-center justify-center text-[#003D5B] shadow-sm">
                 <User size={18} />
               </div>
               <div className="hidden md:flex flex-col items-start text-right">
                 <p className="text-sm font-medium text-white">
                   {user?.name || 'User'}
                 </p>
-                <p className="text-xs text-gray-400">
+                <p className="text-xs text-gray-200">
                   {user?.email}
                 </p>
               </div>
@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
           ) : (
             <button
               onClick={() => signIn()}
-              className="text-sm font-medium text-white hover:text-gray-300 transition cursor-pointer"
+              className="text-sm font-medium text-white hover:text-[#25E2CC] transition cursor-pointer"
             >
               Sign in
             </button>
@@ -89,13 +89,13 @@ const Navbar: React.FC = () => {
               <div className="mt-2 border-t border-gray-100 pt-2">
                 <a
                   href="#"
-                  className="block text-sm text-gray-600 hover:text-primary-600 transition-colors"
+                  className="block text-sm text-gray-600 hover:text-[#25E2CC] transition-colors"
                 >
                   Profile
                 </a>
                 <button
                   onClick={() => signOut()}
-                  className="block w-full text-left text-sm text-gray-600 hover:text-primary-600 transition-colors cursor-pointer"
+                  className="block w-full text-left text-sm text-gray-600 hover:text-[#25E2CC] transition-colors cursor-pointer"
                 >
                   Logout
                 </button>
@@ -107,6 +107,7 @@ const Navbar: React.FC = () => {
     </div>
   </header>
 );
+
 
 };
 

@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import Button from './ui/button';
 import LoginButton from './login-btn';
 import {TextGenerateEffect} from '@/components/ui/text-generate-effect';
 const Hero: React.FC = () => {
@@ -10,7 +9,7 @@ const Hero: React.FC = () => {
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div className="flex flex-col items-center justify-center text-center min-h-[60vh]">
       <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
-        Welcome to <span className="text-blue-600">ManageCX</span>
+        Welcome to <span className="text-blue-600">RosterManager</span>
       </h1>
       <TextGenerateEffect words=
         "Access and manage your Concentrix roster schedules efficiently in one place."

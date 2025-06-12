@@ -1,4 +1,4 @@
-
+/** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
   content: [
@@ -21,6 +21,7 @@ export default {
         inter: ['Inter', 'sans-serif'],
       },
       colors: {
+        // Keep your design tokens
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -54,17 +55,24 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+
+        // Concentrix brand colors
+        concentrix: {
+          navy: '#003D5B',
+          turquoise: '#25E2CC',
+          turquoiseLight: '#abf5ec',
+        },
       },
       keyframes: {
         marquee: {
           '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-100%)' }
-        }
+          '100%': { transform: 'translateX(-100%)' },
+        },
       },
       animation: {
-        marquee: 'marquee 40s linear infinite'
-      }
+        marquee: 'marquee 40s linear infinite',
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

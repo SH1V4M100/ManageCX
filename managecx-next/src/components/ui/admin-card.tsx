@@ -13,11 +13,11 @@ const AdminCard: React.FC<CardProps> = ({ title, icon, children, className = '' 
       <div className="px-6 py-4 border-b border-gray-200">
         <div className="flex items-center">
           {icon && (
-            <div className="mr-2 text-primary-600">
+            <div className="mr-2 text-[#0033a0]">
               {icon}
             </div>
           )}
-          <h2 className="text-lg font-medium text-gray-900">{title}</h2>
+          <h2 className="text-lg font-medium text-gray-800">{title}</h2>
         </div>
       </div>
       <div className="px-6 py-4">
